@@ -1,0 +1,39 @@
+% Author: CatInCosmicSpace
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{IU8-16-references}[2025/09/21 v1.9 Список использованных источников]
+
+% Сведения об источниках следует располагать в порядке появления ссылок на 
+% источники в тексте отчета и нумеровать арабскими цифрами с точкой и печатать 
+% с абзацного отступа.
+\usepackage[
+    backend=biber,
+    style=gost-numeric,
+    sorting=none,
+    % refsection=structure,
+    % sorting=ynt,
+]{biblatex}
+
+\defbibenvironment{bibliography}
+  {\list
+     {}
+     {\setlength{\leftmargin}{1.25cm}
+      \setlength{\itemindent}{0em}
+      \setlength{\itemsep}{\bibitemsep}
+      \setlength{\parsep}{\bibparsep}}}
+  {\endlist}
+  {\item\printtext[labelnumberwidth]{\printfield{labelprefix}\printfield{labelnumber}}\addspace}
+
+\defbibheading{bibliography}[СПИСОК~ИСПОЛЬЗОВАННЫХ~ИСТОЧНИКОВ]{\structure{#1}}
+\addto{\captionsrussian}{%
+    \renewcommand{\contentsname}{СОДЕРЖАНИЕ}
+}
+
+\DefineBibliographyStrings{russian}{%
+  urlseen = {дата обращения},
+}
+
+% Специально изменим шрифт для URL, чтобы он соответсвовал ГОСТ и остальному тексту документа
+\renewcommand{\UrlFont}{\normalfont}
+
+% Изменяем шрифт для авторов в списке литературы на обычный
+\renewcommand{\mkgostheading}[1]{\normalfont{#1}}

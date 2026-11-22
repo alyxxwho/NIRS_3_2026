@@ -1,0 +1,40 @@
+% Author: CatInCosmicSpace
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{IU8-18-extra}[2025/09/21 v1.9 Разные улучшения]
+
+\RequirePackage{graphicx}
+
+\RequirePackage[all, defaultlines=4]{nowidow} % Запрет "висячих" слов
+
+\sloppy % Запретить выход текста за поля
+
+\RequirePackage{bookmark}
+\def\toclevel@structure{1} % Для правильного отображения в содержании pdf
+
+\hypersetup{
+  colorlinks=true, 
+  unicode=true,
+  urlcolor=black, 
+  linkcolor=black, 
+  anchorcolor=black,
+  citecolor=black, 
+  menucolor=black, 
+  filecolor=black,
+} % Кликабельные ссылки в pdf
+
+\hbadness=10000
+
+\setlist[enumerate]{
+  leftmargin=\parindent,
+  labelindent=\parindent,
+  align=left,
+  nosep,
+}
+
+\setlist[itemize]{
+  label=\textendash,
+  leftmargin=\parindent,
+  labelindent=\parindent,
+  align=left,
+  nosep,
+}

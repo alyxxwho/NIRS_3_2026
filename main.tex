@@ -1,0 +1,47 @@
+% Отчёт по НИРС, осень 2026
+% Класс BMSTU-IU8 v1.9 (CatInCosmicSpace, MIT) лежит в корне проекта.
+% Сборка: pdfLaTeX + biber (см. README.md).
+\documentclass[research]{BMSTU-IU8}
+
+\usepackage{amssymb} % \mathbb и прочие символы (класс их не подключает)
+
+\addbibresource{main.bib}
+
+% ---------- Титульный лист (ЗАГЛУШКИ — заменить на реальные данные) ----------
+\student{А. А. Смирнова}
+\studentFullName{Смирнова Анна Андреевна}
+\group{ИУ8-74}
+\supervisor{Б. Б. Кузнецов}
+\supervisorWithDegree{доцент, к.т.н. Кузнецов Б. Б.}
+\speciality{10.05.01 <<Компьютерная безопасность>>}
+\specialization{10.05.01\_01 <<Математические методы защиты информации>>}
+% Для НИРС тема заполняется с \hfill, чтобы подчёркивание шло до конца строки
+\theme{Проектирование защищённой системы машинного обучения
+  с~применением технологий многосторонних конфиденциальных вычислений \hfill}
+
+% ---------- Термины и сокращения ----------
+\input{contents/glossary}
+
+\begin{document}
+    \maketitle
+
+    \input{contents/00-abstract}
+
+    \tableofcontents
+    \termsanddefenitions
+    \listofabbreviations
+
+    \input{contents/00-introduction}
+    \input{contents/01-threats}
+    \input{contents/02-adversary-model}
+    \input{contents/03-architecture}
+    \input{contents/04-protocol}
+    \input{contents/05-methodology}
+    \input{contents/06-trial-run}
+    \input{contents/99-conclusion}
+
+    \printbibliography
+
+    \appendix
+    \input{contents/A-appendices}
+\end{document}

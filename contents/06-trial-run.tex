@@ -1,0 +1,31 @@
+\section{Пробный запуск}
+\label{sec:trial}
+
+\subsection{Подготовка окружения}
+% ЧЕРНОВИК
+Изолированное окружение с закреплёнными версиями Python, TensorFlow и
+TF Encrypted.
+
+\subsection{Локальный запуск трёх сторон}
+
+\begin{lstlisting}[caption={Пример конфигурации игроков (заготовка)}]
+import tf_encrypted as tfe
+
+players = ["server0", "server1", "server2"]
+config = tfe.LocalConfig(players)
+tfe.set_config(config)
+tfe.set_protocol(tfe.protocol.ABY3())
+\end{lstlisting}
+
+\subsection{Тестовые сценарии}
+% ЧЕРНОВИК
+\begin{enumerate}
+    \item конфиденциальное сложение, умножение и сравнение двух чисел;
+    \item вычисление одного узла дерева (сравнение признака с порогом);
+    \item вывод по дереву глубины 2--3 на синтетических данных и сверка с
+    открытым деревом.
+\end{enumerate}
+
+\subsection{Выявленные проблемы}
+
+\subsection{Выводы по разделу}
